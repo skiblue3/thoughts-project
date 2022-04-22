@@ -16,9 +16,9 @@ app.use(cors());
 
 app.use(express.static('build'))
 
-app.use('/posts', postRoutes);
+app.use('/api/posts', postRoutes);
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.send('Hello to Thoughts API')
 })
 
