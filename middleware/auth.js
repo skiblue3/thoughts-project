@@ -1,10 +1,13 @@
 import jwt from "jsonwebtoken";
+import dotenv from 'dotenv';
+dotenv.config();
 
-const secret = 'test';
+// const secret = 'test';
+const secret = process.env.SECRET_STRING;
 
 const auth = async (req, res, next) => {
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    const token = await req.headers.authorization.split(" ")[1];
     const isCustomAuth = token.length < 500;
 
     let decodedData;

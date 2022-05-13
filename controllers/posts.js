@@ -28,9 +28,9 @@ export const getPost = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
-    const { title, message, selectedFile, creator, tags } = req.body;
+    const post = req.body;
 
-    const newPostMessage = new PostMessage({ title, message, selectedFile, creator, tags })
+    const newPostMessage = new PostMessage({ ...post, creator: req.userId })
 
     try {
         await newPostMessage.save();
@@ -80,7 +80,7 @@ export const likePost = async (req, res) => {
         post.likes.push(req.userId)
     } else {
         // dislike the post
-        post.likes.filter(id => id !== String(req.userId));
+        post.likes = post.likes.filter((id) => id !== String(req.userId));
     }
 
     const updatedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
