@@ -6,6 +6,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import postRoutes from './routes/posts.js';
+import userRoutes from './routes/users.js';
 
 const app = express();
 dotenv.config();
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(express.static('build'))
 
 app.use('/api/posts', postRoutes);
+app.use('/api/user', userRoutes);
 
 app.get('/api', (req, res) => {
   res.send('Hello to Thoughts API')
