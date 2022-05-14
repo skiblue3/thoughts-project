@@ -16,10 +16,9 @@ Social media app to share your thoughts!
 - It uses MongoDB to store data, Redux used as data store.
 - Can fetch, create, update, delete posts.
 - Likes feature implemented (only LoggedIn Users can like it).
-- Authentication done using both ==Google Oauth2.0 and JWT==.
-
+- Authentication done using both <mark>Google Oauth2.0 and JWT</mark>.
 
 ## Link:
 - [Social Media App](https://thoughts-project-03.herokuapp.com/)
-- [Api](https://thoughts-project-03.herokuapp.com/api/posts/)
+- [API](https://thoughts-project-03.herokuapp.com/api/posts/)
 
